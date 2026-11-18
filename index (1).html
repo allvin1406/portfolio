@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allvin P – Electronics & Embedded Systems Engineer</title>
+<meta name="description" content="Portfolio of Allvin P, final-year ECE student focused on embedded systems, PCB design, IoT and AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050b1a;--bg2:#0a1530;--glass:rgba(14,28,60,.55);--line:rgba(110,160,255,.18);--blue:#2f7bff;--cyan:#22d3ee;--text:#e6edf8;--mute:#93a4c3;--r:18px;
+--display:"Space Grotesk","Segoe UI",system-ui,sans-serif;--body:"Inter","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 var(--body);overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%;background:radial-gradient(1200px 700px at 80% -10%,#0f2a66 0,transparent 60%),radial-gradient(900px 600px at -10% 40%,#08234a 0,transparent 55%),var(--bg)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--display);line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:12px}
+.lead{color:var(--mute);max-width:62ch;margin-bottom:40px}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+nav.stuck{background:rgba(5,11,26,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 1.2rem var(--display);display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font:700 .8rem var(--display);font-style:normal;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#031024}
+.links{display:flex;gap:6px;list-style:none}
+.links a{padding:8px 14px;border-radius:999px;color:var(--mute);font-size:.93rem;transition:.2s}
+.links a:hover,.links a.on{color:var(--text);background:rgba(47,123,255,.16)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:10px;font-size:1.2rem;cursor:pointer}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;font-size:.88rem;color:var(--cyan);margin-bottom:22px}
+.chip b{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 var(--cyan);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:700}
+h1 span{background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font:500 clamp(1.1rem,2.4vw,1.5rem) var(--display);margin:18px 0 14px;min-height:1.6em;color:#cfe0ff}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--cyan);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{color:var(--mute);max-width:52ch;margin-bottom:32px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font:600 .95rem var(--body);border:1px solid var(--line);cursor:pointer;color:var(--text);background:transparent;transition:.25s}
+.btn.pri{background:linear-gradient(120deg,var(--blue),#17b8e6);border-color:transparent;color:#021022}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--blue)}
+.social{display:flex;gap:12px;margin-top:30px}
+.social a{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;transition:.25s}
+.social a:hover{border-color:var(--cyan);transform:translateY(-3px)}
+.social svg{width:20px;height:20px;fill:currentColor}
+.photo{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:4/5}
+.photo .frame{position:absolute;inset:0;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(160deg,#0d2250,#061230);display:grid;place-items:center;box-shadow:0 30px 80px -30px rgba(47,123,255,.6)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.photo .ini{font:700 5rem var(--display);color:var(--cyan);position:absolute}
+.photo::before,.photo::after{content:"";position:absolute;width:56px;height:56px;border:2px solid var(--cyan);z-index:2;pointer-events:none}
+.photo::before{top:-12px;left:-12px;border-right:0;border-bottom:0;border-radius:14px 0 0 0}
+.photo::after{bottom:-12px;right:-12px;border-left:0;border-top:0;border-radius:0 0 14px 0}
+.tag{position:absolute;z-index:3;padding:9px 14px;border-radius:12px;font-size:.82rem;font-weight:500}
+.tag.a{left:-26px;bottom:60px}.tag.b{right:-20px;top:46px}
+/* load sequence */
+.in{opacity:0;transform:translateY(18px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+/* about */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:32px}
+.about p{color:#c3d0e8;margin-bottom:16px}
+.facts{padding:26px;display:grid;gap:18px;align-content:start}
+.facts div small{display:block;color:var(--mute);font-size:.82rem}
+.facts div span{font-weight:500}
+/* skills */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.f{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);cursor:pointer;font:500 .9rem var(--body);transition:.2s}
+.f:hover{color:var(--text)}
+.f[aria-pressed=true]{background:rgba(47,123,255,.22);border-color:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.sk{padding:16px 18px;font-weight:500;transition:.25s;animation:pop .35s both}
+.sk small{display:block;color:var(--mute);font-weight:400;font-size:.78rem}
+.sk:hover{border-color:var(--cyan);transform:translateY(-3px)}
+@keyframes pop{from{opacity:0;transform:scale(.94)}}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.proj{padding:30px;display:flex;flex-direction:column;gap:14px;transition:.3s}
+.proj:hover{border-color:rgba(34,211,238,.5);transform:translateY(-4px)}
+.proj .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:rgba(47,123,255,.15);border:1px solid var(--line)}
+.proj .ic svg{width:28px;height:28px;stroke:var(--cyan);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.proj h3{font-size:1.4rem}
+.proj p{color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:4px 12px;border-radius:999px;font-size:.8rem;background:rgba(34,211,238,.09);color:#9fe9f7;border:1px solid rgba(34,211,238,.2)}
+.more{max-height:0;overflow:hidden;transition:max-height .45s ease;color:#c3d0e8}
+.more ul{padding:6px 0 0 20px;display:grid;gap:6px}
+.tog{align-self:flex-start;background:none;border:0;color:var(--cyan);font:600 .92rem var(--body);cursor:pointer;margin-top:auto;padding:4px 0}
+/* timeline */
+.tl{position:relative;display:grid;gap:22px;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--cyan),var(--blue),transparent)}
+.item{position:relative;padding:24px 26px}
+.item::before{content:"";position:absolute;left:-30px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
+.item h3{font-size:1.15rem;margin-bottom:4px}
+.item p{color:var(--mute);font-size:.95rem}
+.item em{font-style:normal;color:var(--cyan);font-size:.85rem;display:block;margin-bottom:6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{padding:22px 24px}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card p{color:var(--mute);font-size:.92rem}
+.card small{display:inline-block;margin-top:10px;color:var(--cyan);font-size:.82rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font-size:1.35rem;margin-bottom:18px}
+/* contact */
+.contact{padding:48px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:-40% -10% auto;height:300px;background:radial-gradient(closest-side,rgba(47,123,255,.35),transparent);pointer-events:none}
+.contact h2{position:relative}
+.contact p{color:var(--mute);max-width:52ch;margin:0 auto 28px;position:relative}
+.rows{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,30px);opacity:0;padding:12px 22px;border-radius:999px;background:#0e2a5c;border:1px solid var(--cyan);transition:.3s;z-index:90;font-size:.92rem}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{padding:36px 0;text-align:center;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
+#top{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;color:var(--cyan);font-size:1.2rem;z-index:60}
+#top.show{opacity:1;pointer-events:auto}
+@media(max-width:900px){
+ .hero .wrap,.about,.two,.projects{grid-template-columns:1fr}
+ .photo{order:-1;width:min(260px,68vw)}
+ .hero{padding-top:100px}
+ .burger{display:block}
+ .links{position:absolute;top:68px;left:16px;right:16px;flex-direction:column;padding:12px;background:rgba(7,16,38,.96);border:1px solid var(--line);border-radius:16px;display:none}
+ .links.open{display:flex}
+ .tag.a{left:-8px}.tag.b{right:-8px}
+ section{padding:72px 0}.contact{padding:36px 22px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.in{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<nav id="nav"><div class="wrap nav">
+ <a href="#home" class="logo"><i>AP</i>Allvin P</a>
+ <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+ <ul class="links" id="links">
+  <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li>
+  <li><a href="#achievements">Achievements</a></li><li><a href="#learning">Learning</a></li><li><a href="#contact">Contact</a></li>
+ </ul>
+</div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+ <div>
+  <div class="chip glass in" style="animation-delay:.1s"><b></b>Final-year ECE student, graduating 2027</div>
+  <h1 class="in" style="animation-delay:.25s">Hi, I’m <span>Allvin P</span></h1>
+  <p class="role in" style="animation-delay:.4s"><span id="typed"></span><i class="caret"></i></p>
+  <p class="sub in" style="animation-delay:.55s">I build hardware that senses, decides and alerts. My work spans microcontrollers, circuit and PCB design, and IoT systems, with a growing interest in AI.</p>
+  <div class="btns in" style="animation-delay:.7s">
+   <a class="btn pri" href="#projects">View projects</a>
+   <a class="btn" href="Allvin_P_Resume.pdf" download>Download resume</a>
+   <a class="btn" href="#contact">Contact me</a>
+  </div>
+  <div class="social in" style="animation-delay:.85s">
+   <a class="glass" href="https://github.com/allvin1406" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5z"/></svg></a>
+   <!-- Replace # with your LinkedIn profile URL -->
+   <a class="glass" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.800-2 3.700-2 4 0 4.700 2.600 4.700 6V21h-4v-5c0-1.200 0-2.800-1.700-2.800s-2 1.300-2 2.700V21h-4z"/></svg></a>
+   <a class="glass" href="mailto:allvinprabhu@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.500L4.500 7v.1L12 13l7.500-5.900V7z"/></svg></a>
+  </div>
+ </div>
+ <div class="photo in" style="animation-delay:.5s">
+  <div class="frame"><span class="ini">AP</span><img src="profile.jpg" alt="Portrait of Allvin P" onerror="this.remove()"></div>
+  <div class="tag glass a">Embedded Systems</div>
+  <div class="tag glass b">PCB Design</div>
+ </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+ <h2>About me</h2>
+ <p class="lead">Engineering student at C.K. College of Engineering and Technology, Cuddalore.</p>
+ <div class="about">
+  <div>
+   <p>I’m a final-year Electronics and Communication Engineering student with a strong interest in embedded systems, PCB design, the Internet of Things and artificial intelligence.</p>
+   <p>I have hands-on experience with hardware development, microcontrollers and circuit design, and I program in C, Java and Python. My projects so far include a hardware-based security system and a mobile application.</p>
+   <p>Hackathons, workshops and industrial visits have shown me how emerging technology is used in practice, and I enjoy applying what I learn to real problems.</p>
+  </div>
+  <div class="facts glass">
+   <div><small>Degree</small><span>B.E. Electronics and Communication Engineering</span></div>
+   <div><small>College</small><span>C.K. College of Engineering and Technology (Autonomous), Cuddalore</span></div>
+   <div><small>Duration and CGPA</small><span>2023 – 2027, CGPA 7.1</span></div>
+   <div><small>Higher secondary</small><span>CSI St. David’s HSS, Cuddalore, 65%</span></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Technical skills</h2>
+ <p class="lead">Filter by area to see what I work with.</p>
+ <div class="filters" id="filters" role="group" aria-label="Filter skills"></div>
+ <div class="grid" id="skgrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2>
+ <p class="lead">Two projects, one in hardware and one in software. Open a card for more.</p>
+ <div class="projects">
+  <article class="proj glass">
+   <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+   <h3>Electric Fence Security System</h3>
+   <p>A hardware-based security system that detects and prevents unauthorized contact with, or tampering of, electric fences.</p>
+   <div class="tags"><span>Sensors</span><span>Alert mechanisms</span><span>Hardware</span></div>
+   <div class="more" id="m1"><ul>
+    <li>Sensors and alert mechanisms improve safety and enable real-time intrusion detection.</li>
+    <li>Showcased at C.K. College of Engineering and Technology.</li>
+    <li>Presented at the PALS InnoWaH cluster finals, SRM Institute of Science and Technology.</li></ul></div>
+   <button class="tog" aria-expanded="false" aria-controls="m1">Show details</button>
+  </article>
+  <article class="proj glass">
+   <div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+   <h3>Smart Canteen App</h3>
+   <p>A mobile application for browsing the canteen menu digitally and ordering food online.</p>
+   <div class="tags"><span>Mobile app</span><span>Online ordering</span></div>
+   <div class="more" id="m2"><ul>
+    <li>Aims to improve canteen efficiency by reducing waiting times.</li>
+    <li>Supports faster order management for canteen staff.</li></ul></div>
+   <button class="tog" aria-expanded="false" aria-controls="m2">Show details</button>
+  </article>
+ </div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+ <h2>Achievements and events</h2>
+ <p class="lead">Courses, competitions and showcases.</p>
+ <div class="tl" id="tl"></div>
+</div></section>
+
+<section id="learning"><div class="wrap">
+ <h2>Certifications, workshops and visits</h2>
+ <p class="lead">Formal learning and field exposure.</p>
+ <h3 style="margin-bottom:16px">Certifications</h3>
+ <div class="cols" id="certs" style="margin-bottom:48px"></div>
+ <div class="two">
+  <div><h3>Workshops</h3><div class="cols" id="ws" style="grid-template-columns:1fr"></div></div>
+  <div><h3>Industrial visits</h3><div class="cols" id="iv" style="grid-template-columns:1fr"></div></div>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <div class="contact glass">
+  <h2>Let’s connect</h2>
+  <p>I’m looking for opportunities where I can apply my engineering knowledge, grow my technical skills and contribute to technology-driven projects.</p>
+  <div class="rows">
+   <a class="btn pri" href="mailto:allvinprabhu@gmail.com">Send an email</a>
+   <button class="btn" data-copy="allvinprabhu@gmail.com">Copy email</button>
+   <button class="btn" data-copy="8925440262">Copy phone number</button>
+   <a class="btn" href="https://github.com/allvin1406" target="_blank" rel="noopener">View GitHub</a>
+  </div>
+ </div>
+</div></section>
+
+<footer>© <span id="yr"></span> Allvin P. Built with HTML, CSS and JavaScript.</footer>
+<a id="top" class="glass" href="#home" aria-label="Back to top">↑</a>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+/* data */
+const skills=[
+["Programming","C"],["Programming","Java"],["Programming","Python"],
+["PCB design","PCB layout design"],["PCB design","Schematic design"],
+["Embedded","STM32 processor"],["Embedded","Microcontroller fundamentals"],["Embedded","Arduino"],
+["Electronics","Digital electronics"],["Electronics","Analog electronics"],["Electronics","Circuit design"],
+["Hardware","Sensors and actuators"],["Hardware","Hardware interfacing"]];
+const ach=[
+["Advanced Electronics Manufacturing – IIT Madras","Completed an 11-day (99-hour) course on Advanced Electronics Manufacturing with Power Electronics Fundamentals at the Central Electronics Centre, IIT Madras, with IITM Pravartak.","Course"],
+["PALS InnoWaH – Cluster Finals","Presented the hardware solution “Detect and Prevent Unauthorized Use of Electric Fences” at SRM Institute of Science and Technology.","Competition"],
+["IFET Hack Warriors – National Level Hackathon","Took part in a 24-hour national hackathon on AR and VR at IFET College of Engineering, Villupuram.","Hackathon"],
+["IDEAMAKERS 3.0 – National Idea Competition","Received an appreciation certificate for presenting “Intelligence MCB Fault Detection” at St. Anne’s College of Engineering and Technology, Panruti.","Competition"],
+["Intra-college IoT and AI hackathon","Took part in an 8-hour hackathon on the Internet of Things and AI at C.K. College of Engineering and Technology.","Hackathon"]];
+const certs=[["Elite Certification in Java Programming","NPTEL","75%"],["Joy of Computing Using Python","NPTEL","58%"],["OpenCV Bootcamp","OpenCV University","100%"],["Oracle Cloud Infrastructure Foundations","Oracle","Certified"],["AI for Business Professionals","HP LIFE","Completed"],["Full Stack Development","NoviTech","Completed"]];
+const ws=[["Embedded System Design using STM32","EMCOG Solutions Pvt. Ltd."],["Raspberry Pi Workshop","EDIYLABS Technology Solutions"],["Altair PSIM and FluxMotor","C.K. College of Engineering and Technology"],["AR/VR Workshop","C.K. College of Engineering and Technology"],["AI and Machine Learning","GenOrcasX"]];
+const iv=[["Aero Knotz (Drones India Pvt. Ltd.)","Drone operations in defence, aerial videography and agricultural spraying."],["BSNL – Rajiv Gandhi Memorial Telecom Training Centre","Optical fibre communication, switching systems and network operations."],["Robomiracle","Humanoid robots, AI-based systems and real-time automation."],["International Airport, Madurai","Airport communication and signal systems, including transmission and networks."]];
+const card=(t,p,s)=>`<div class="card glass"><h3>${t}</h3><p>${p}</p>${s?`<small>${s}</small>`:""}</div>`;
+$("#certs").innerHTML=certs.map(c=>card(c[0],c[1],c[2])).join("");
+$("#ws").innerHTML=ws.map(c=>card(c[0],c[1])).join("");
+$("#iv").innerHTML=iv.map(c=>card(c[0],c[1])).join("");
+$("#tl").innerHTML=ach.map(a=>`<div class="item glass"><em>${a[2]}</em><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join("");
+$("#yr").textContent=new Date().getFullYear();
+
+/* skill filters */
+const cats=["All",...new Set(skills.map(s=>s[0]))];
+const fl=$("#filters"),sg=$("#skgrid");
+function show(c){
+ fl.querySelectorAll(".f").forEach(b=>b.setAttribute("aria-pressed",b.dataset.c===c));
+ sg.innerHTML=skills.filter(s=>c==="All"||s[0]===c).map((s,i)=>`<div class="sk glass" style="animation-delay:${i*35}ms">${s[1]}<small>${s[0]}</small></div>`).join("");
+}
+fl.innerHTML=cats.map(c=>`<button class="f" data-c="${c}" aria-pressed="false">${c}</button>`).join("");
+fl.onclick=e=>{const b=e.target.closest(".f");if(b)show(b.dataset.c)};
+show("All");
+
+/* project cards */
+document.querySelectorAll(".tog").forEach(b=>b.onclick=()=>{
+ const m=document.getElementById(b.getAttribute("aria-controls")),open=b.getAttribute("aria-expanded")==="true";
+ m.style.maxHeight=open?0:m.scrollHeight+"px";
+ b.setAttribute("aria-expanded",!open);b.textContent=open?"Show details":"Hide details";
+});
+
+/* nav */
+const nav=$("#nav"),links=$("#links"),burger=$("#burger"),top=$("#top");
+burger.onclick=()=>{const o=links.classList.toggle("open");burger.setAttribute("aria-expanded",o);burger.textContent=o?"✕":"☰"};
+links.onclick=e=>{if(e.target.tagName==="A"){links.classList.remove("open");burger.textContent="☰";burger.setAttribute("aria-expanded",false)}};
+addEventListener("scroll",()=>{nav.classList.toggle("stuck",scrollY>20);top.classList.toggle("show",scrollY>700)},{passive:true});
+const secs=[...document.querySelectorAll("section")];
+secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+s.id))}),{rootMargin:"-45% 0px -50% 0px"}).observe(s));
+
+/* copy buttons */
+const toast=$("#toast");
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{
+ try{await navigator.clipboard.writeText(b.dataset.copy);toast.textContent="Copied "+b.dataset.copy}catch(e){toast.textContent="Copy failed. Select the text manually: "+b.dataset.copy}
+ toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200);
+});
+
+/* typed role */
+const roles=["Electronics and Communication Engineer","Embedded Systems Enthusiast","PCB Design Learner","IoT and AI Explorer"];
+const ty=$("#typed"),still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(still){ty.textContent=roles[0]}else{let r=0,c=0,del=false;(function tick(){
+ const w=roles[r];c+=del?-1:1;ty.textContent=w.slice(0,c);
+ let t=del?28:55;if(!del&&c===w.length){del=true;t=1600}else if(del&&c===0){del=false;r=(r+1)%roles.length;t=350}
+ setTimeout(tick,t)})()}
+
+/* circuit background: signal pulses travelling along a grid */
+const cv=$("#bg"),cx=cv.getContext("2d"),G=56;let W,H,P=[];
+function size(){const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+ P=Array.from({length:Math.round(W*H/70000)+6},mk)}
+function mk(){const dirs=[[1,0],[-1,0],[0,1],[0,-1]];return{x:Math.floor(Math.random()*W/G)*G,y:Math.floor(Math.random()*H/G)*G,d:dirs[Math.random()*4|0],t:[],s:.7+Math.random()*.9}}
+function grid(){cx.lineWidth=1;cx.strokeStyle="rgba(90,140,255,.07)";cx.beginPath();
+ for(let x=0;x<=W;x+=G){cx.moveTo(x+.5,0);cx.lineTo(x+.5,H)}for(let y=0;y<=H;y+=G){cx.moveTo(0,y+.5);cx.lineTo(W,y+.5)}cx.stroke();
+ cx.fillStyle="rgba(90,170,255,.16)";for(let x=0;x<=W;x+=G)for(let y=0;y<=H;y+=G)if((x*7+y*13)%5===0)cx.fillRect(x-2,y-2,4,4)}
+function frame(){cx.clearRect(0,0,W,H);grid();
+ for(const p of P){p.x+=p.d[0]*p.s;p.y+=p.d[1]*p.s;p.t.push([p.x,p.y]);if(p.t.length>46)p.t.shift();
+  if(Math.abs(p.x%G)<p.s&&Math.abs(p.y%G)<p.s&&Math.random()<.3){const o=p.d[0]?[[0,1],[0,-1]]:[[1,0],[-1,0]];p.d=o[Math.random()*2|0];p.x=Math.round(p.x/G)*G;p.y=Math.round(p.y/G)*G}
+  if(p.x<-G||p.x>W+G||p.y<-G||p.y>H+G)Object.assign(p,mk());
+  cx.lineCap="round";for(let i=1;i<p.t.length;i++){cx.strokeStyle=`rgba(34,211,238,${i/p.t.length*.55})`;cx.lineWidth=1.6;cx.beginPath();cx.moveTo(...p.t[i-1]);cx.lineTo(...p.t[i]);cx.stroke()}
+  cx.fillStyle="#22d3ee";cx.beginPath();cx.arc(p.x,p.y,2.4,0,7);cx.fill()}
+ if(!still)requestAnimationFrame(frame)}
+addEventListener("resize",size);size();frame();
+</script>
+</body>
+</html>
